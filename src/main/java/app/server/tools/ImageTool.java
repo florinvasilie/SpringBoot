@@ -1,5 +1,6 @@
 package app.server.tools;
 
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.springframework.stereotype.Service;
@@ -40,12 +41,15 @@ public class ImageTool {
         this.imageExtension = imageExtension;
     }
 
-    public String ifValidExtensionReturnExtension(String path){
-        System.out.println(path);
+    public Boolean checkExtension(String imageExtension){
+
         for (validTypes type: validTypes.values()){
-            if(path.toUpperCase().matches("^.*\\." + type.name() + "$")) return type.name().toString();
+            if(imageExtension.toUpperCase().matches("^.*\\." + type.name() + "$")){
+                setImageExtension(type.name().toString());
+                return true;
+            }
         }
-        return "";
+        return false;
     }
 
     public Mat BufferedImageToMat (BufferedImage bufferedImage){
@@ -87,11 +91,4 @@ public class ImageTool {
         return outImage;
     }
 
-    public BufferedImage resizeIfNecessary (BufferedImage imageFile, int width, int height){
-
-//        if (imageFile.getWidth() < width || imageFile.getHeight() < height)
-            imageFile = resize(imageFile, imageFile.getType(),(int)(imageFile.getWidth()*1.8),(int)(imageFile.getHeight()*1.8),1.8,1.8);
-
-        return imageFile;
-    }
 }

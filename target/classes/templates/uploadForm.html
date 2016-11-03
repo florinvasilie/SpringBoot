@@ -18,12 +18,12 @@
 
 </head>
 <body>
-    <form onsubmit="show()" method="POST" action="/" id="submitButton" enctype="multipart/form-data">
+    <form onsubmit="show()" method="POST" action="/upload" id="submitButton" enctype="multipart/form-data">
         <div class="preview img-wrapper">
         </div>
         <div class="file-upload-wrapper">
-            <input type="file" name="file" class="file-upload-native" accept="image/*" />
-            <input type="text" placeholder="choose image" class="file-upload-text" />
+            <input type="file" name="file" class="file-upload-native" accept="image/*,application/pdf" />
+            <input type="text" placeholder="choose image/pdf" class="file-upload-text" />
         </div>
         <input type="submit" value="upload" style = "margin-left:47.2%; margin-top:1%; padding:0.4% 1.3%; background-color:rgb(33, 122, 105);" />
 

@@ -2,13 +2,9 @@ package app.server.service;
 
 import app.server.tools.FileTool;
 import app.server.tools.ImageTool;
-import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.Point;
-import org.opencv.core.Size;
+import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +14,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.opencv.imgproc.Imgproc.ADAPTIVE_THRESH_MEAN_C;
 import static org.opencv.imgproc.Imgproc.THRESH_BINARY;
@@ -34,19 +32,15 @@ public class ImageProcessing {
     @Autowired
     private FileTool fileTool;
 
-    public BufferedImage kmeansPython(BufferedImage imageFile){
-        System.out.println("in functie "+ imageFile);
+    public BufferedImage kmeansPython(Mat imageFile, int contor ){
 
-        try {
-            ImageIO.write(imageFile,imageTool.getImageExtension(),new File(fileTool.getNewDirPath()+imageTool.getImageName()+"."+imageTool.getImageExtension()));
-//            ImageIO.write(imageFile,"JPG",new File("C:\\Users\\fvasilie\\Desktop\\diacriticeMIN.jpg"));
-            System.out.println("Salvare poza originala");
-            System.out.println((fileTool.getNewDirPath()+imageTool.getImageName())+imageTool.getImageExtension());
-        } catch (IOException e) {
-            System.out.println("Nu a salvat original PHOTO");
-            e.printStackTrace();
-        }
-//        fileTool.saveImage();
+        imageTool.setImageName("OriginalPhoto" + contor);
+        System.out.println("EXTENSIE");
+        System.out.println(imageTool.getImageExtension());
+        System.out.println(fileTool.getNewDirPath()+imageTool.getImageName() +"."+imageTool.getImageExtension());
+        System.out.println();
+
+        Imgcodecs.imwrite(fileTool.getNewDirPath()+imageTool.getImageName() +"."+imageTool.getImageExtension(), imageFile);
 
         System.out.println("--- Process ---");
         Process exec = null;
@@ -54,13 +48,10 @@ public class ImageProcessing {
 
             System.out.println(fileTool.getProjectPath() + "python\\color_cuantization.py");
 
-            System.out.println(fileTool.getNewDirPath() + imageTool.getImageName() + imageTool.getImageExtension());
-
-            System.out.println(fileTool.getNewDirPath() + "kmeansPhoto" + imageTool.getImageExtension());
-
+            System.out.println(fileTool.getNewDirPath() + imageTool.getImageName() +  imageTool.getImageExtension());
 
             exec = Runtime.getRuntime().exec(new String[] { "C:\\Users\\fvasilie\\AppData\\Local\\Continuum\\Anaconda3\\python.exe", fileTool.getProjectPath() + "python\\color_cuantization.py",
-                    fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension(), fileTool.getNewDirPath() + "kmeansPhoto" + "." + imageTool.getImageExtension()});
+                    fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension(), fileTool.getNewDirPath() + "kmeansPhoto" + contor +"." + imageTool.getImageExtension()});
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,7 +65,7 @@ public class ImageProcessing {
         BufferedImage kmeansImage = null;
 
         try {
-            kmeansImage = ImageIO.read(new File(fileTool.getNewDirPath() + "kmeansPhoto" + "." + imageTool.getImageExtension()));
+            kmeansImage = ImageIO.read(new File(fileTool.getNewDirPath() + "kmeansPhoto"+ contor + "." + imageTool.getImageExtension()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -126,7 +117,6 @@ public class ImageProcessing {
 
     public Mat imageRotation (Mat imageFile, double angle){
 
-//        Core.bitwise_not(imageFile,imageFile);
         Point center = new Point(imageFile.width()/2, imageFile.height()/2);
 
         Mat rotImage = Imgproc.getRotationMatrix2D(center, angle, 1.0);
@@ -145,27 +135,90 @@ public class ImageProcessing {
 
         return imageFile;
     }
-    public String getTextFromImage(Mat imageFile, String language){
 
-        fileTool.saveImage(imageFile,imageTool.getImageName()+ "." + imageTool.getImageExtension(),fileTool.getNewDirPath());
-        BufferedImage finalImage = null;
+    public List<Mat> detectTextAreas(Mat imageFile){
 
-        try {
-            finalImage = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
+        List<Mat> regions = new ArrayList<Mat>();
+        Mat originalImage = imageFile.clone();
+        Mat imageCountours = imageFile.clone();
+        Mat img2gray = new Mat();
+        Mat mask = new Mat();
+        Mat dilated = new Mat();
+        Mat kernel = new Mat();
+        Mat hierarchy = new Mat();
 
-        }catch (IOException e) {}
+        Imgproc.cvtColor(imageFile,img2gray,Imgproc.COLOR_BGR2GRAY);
+        Imgproc.threshold(img2gray,mask,180,255,Imgproc.THRESH_BINARY_INV);
+        kernel = Imgproc.getStructuringElement(Imgproc.MORPH_CROSS, new Size(3,3));
+        Imgproc.dilate(mask,dilated,kernel, new Point(),9);
 
-        ITesseract instance = new Tesseract();
-        instance.setLanguage(language);
-        String result="";
-        try {
-            result = instance.doOCR(finalImage);
-        } catch (TesseractException e) {
-            System.err.println(e.getMessage());
+        ArrayList<MatOfPoint> contours = new ArrayList<MatOfPoint>();
+        Imgproc.findContours(dilated, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_NONE);
+
+        for (MatOfPoint contour : contours) {
+
+            Rect rec = Imgproc.boundingRect(contour);
+            if (rec.width < 55  || rec.height < 55)
+                continue;
+
+            Point pt1 = new Point(rec.x, rec.y);
+            Point pt2 = new Point(rec.x + rec.width, rec.y + rec.height);
+            Scalar color = new Scalar(255,0,255);
+            Imgproc.rectangle(imageCountours,pt1,pt2,color,1);
+
+//            int pad = 3;
+//            rec.x = rec.x + pad;
+//            rec.y = rec.y + pad;
+            Mat result = originalImage.submat(rec);
+
+            regions.add(result);
         }
+        Imgcodecs.imwrite("C:\\Users\\fvasilie\\Desktop\\contours.jpg", imageCountours);
 
-        if (result.isEmpty()) return "Eroare! Va rugam reincercati!";
+        return regions;
+    }
 
+    public String getTextFromImage(List<Mat> textRegions, String language){
+        String result = "";
+
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        for(int i=0; i< textRegions.size(); i++){
+
+
+//            BufferedImage kmeans = kmeansPython(imageTool.MatToBufferedImage(textRegions.get(i)));
+//            BufferedImage imageFileResized = imageTool.resize(kmeans, kmeans.getType(),(int)(kmeans.getWidth()*1.8),(int)(kmeans.getHeight()*1.8),1.8,1.8);
+
+
+            Mat matImage, grayScale, gaussianBlur, adaptiveThreshold, finalImage;
+
+//            matImage = imageTool.BufferedImageToMat(textRegions.get(i));
+            grayScale = grayScale(textRegions.get(i));
+//            gaussianBlur = gaussianBlur(grayScale,3);
+            adaptiveThreshold = adaptiveThreshold(grayScale);
+//            double angle = findAngleLines(adaptiveThreshold);
+//            finalImage = imageRotation(adaptiveThreshold, angle);
+
+            imageTool.setImageName("PhotoForOCR"+i);
+            fileTool.saveImage(adaptiveThreshold,imageTool.getImageName()+ "." + imageTool.getImageExtension(),fileTool.getNewDirPath());
+            BufferedImage imgForTesseract = null;
+
+            try {
+                imgForTesseract = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
+
+            }catch (IOException e) {}
+
+            Tesseract instance = new Tesseract();
+            instance.setLanguage(language);
+
+            try {
+                result += instance.doOCR(imgForTesseract);
+            } catch (TesseractException e) {
+                System.err.println(e.getMessage());
+            }
+
+            if (result.isEmpty()) return "Eroare! Va rugam reincercati!"+imageTool.getImageName();
+            result +="\n\n";
+        }
         return result;
     }
 

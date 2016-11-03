@@ -6,8 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <p th:utext="${message}"></p>
-    <div id="rezultatul">
-    </div>
+
+    <p th:each="image : ${imageStored.images}"
+       th:text="${image}"></p>
+
+
 </body>
 </html>
