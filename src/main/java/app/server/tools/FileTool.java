@@ -63,6 +63,7 @@ public class FileTool {
     public List<BufferedImage> pdfToImage (String extension, InputStream file) throws IOException {
         List<BufferedImage> imagesFromPDF = new ArrayList<BufferedImage>();
         PDDocument document = PDDocument.load(file);
+
         PDFRenderer pdfRenderer = new PDFRenderer(document);
 
         for (int page = 0; page < document.getNumberOfPages(); page++){

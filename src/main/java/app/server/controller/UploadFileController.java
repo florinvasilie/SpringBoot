@@ -123,7 +123,7 @@ public class UploadFileController {
             Mat matImage = imageTool.BufferedImageToMat(imageFile);
             List<Mat> images = imageProcessing.detectTextAreas(matImage);
             System.out.println(images.size());
-            if (true) return new ModelAndView("uploadOk","message",result);
+//            if (true) return new ModelAndView("uploadOk","message",result);
             for (int i=0; i<images.size();i++){
 
                 BufferedImage kmeans = imageProcessing.kmeansPython(images.get(i),i);
@@ -143,20 +143,20 @@ public class UploadFileController {
                 fileTool.saveImage(adaptiveThreshold,imageTool.getImageName()+ "." + imageTool.getImageExtension(),fileTool.getNewDirPath());
                 BufferedImage imgForTesseract = null;
 
-                try {
-                    imgForTesseract = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
-
-
-                }catch (IOException e) {}
-
-                Tesseract instance = new Tesseract();
-                instance.setLanguage("ron");
-
-                try {
-                    result += instance.doOCR(imgForTesseract);
-                } catch (TesseractException e) {
-                    System.err.println(e.getMessage());
-                }
+//                try {
+//                    imgForTesseract = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
+//
+//
+//                }catch (IOException e) {}
+//
+//                Tesseract instance = new Tesseract();
+//                instance.setLanguage("ron");
+//
+//                try {
+//                    result += instance.doOCR(imgForTesseract);
+//                } catch (TesseractException e) {
+//                    System.err.println(e.getMessage());
+//                }
 
                 result +="\n";
                 System.out.println(i);

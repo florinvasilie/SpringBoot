@@ -158,18 +158,20 @@ public class ImageProcessing {
         for (MatOfPoint contour : contours) {
 
             Rect rec = Imgproc.boundingRect(contour);
-            if (rec.width < 55  || rec.height < 55)
+            if (rec.width < 55  || rec.height < 55 )
                 continue;
 
-            Point pt1 = new Point(rec.x, rec.y);
-            Point pt2 = new Point(rec.x + rec.width, rec.y + rec.height);
-            Scalar color = new Scalar(255,0,255);
-            Imgproc.rectangle(imageCountours,pt1,pt2,color,1);
+            Point pt1 = new Point(rec.x + 18 , rec.y + 18);
+            Point pt2 = new Point(rec.x + rec.width - 1, rec.y + rec.height - 1);
+            Scalar color = new Scalar(255,255,255);
+            Imgproc.rectangle(imageCountours,pt1,pt2,color,4);
 
-//            int pad = 3;
-//            rec.x = rec.x + pad;
-//            rec.y = rec.y + pad;
+            rec.x = rec.x + 21;
+            rec.y = rec.y + 21;
+            rec.width = rec.width - 24;
+            rec.height = rec.height - 24;
             Mat result = originalImage.submat(rec);
+
 
             regions.add(result);
         }

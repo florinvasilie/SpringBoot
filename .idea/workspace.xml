@@ -2,41 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852cf9e0-783b-4bf1-b25a-a50dfbe4b69f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/app/client/controller/ClientController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/app/client/controller/FormController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/app/server/controller/GreetingController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/app/server/model/Greeting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/files/OriginalPhoto.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/files/PhotoForOCR.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/files/kmeansPhoto.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/app/server/controller/GreetingController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/app/server/model/Greeting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/files/OriginalPhoto.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/files/PhotoForOCR.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/files/kmeansPhoto.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/js/getJson.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/getJson.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/ConsumeAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/Application.class" afterPath="$PROJECT_DIR$/target/classes/app/Application.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/controller/UploadFileController.class" afterPath="$PROJECT_DIR$/target/classes/app/server/controller/UploadFileController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/model/TextRecognized.class" afterPath="$PROJECT_DIR$/target/classes/app/server/model/TextRecognized.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/service/ImageProcessing.class" afterPath="$PROJECT_DIR$/target/classes/app/server/service/ImageProcessing.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/tools/FileTool.class" afterPath="$PROJECT_DIR$/target/classes/app/server/tools/FileTool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/tools/ImageTool$validTypes.class" afterPath="$PROJECT_DIR$/target/classes/app/server/tools/ImageTool$validTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app/server/tools/ImageTool.class" afterPath="$PROJECT_DIR$/target/classes/app/server/tools/ImageTool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/files/OriginalPhoto0.JPG" afterPath="$PROJECT_DIR$/target/classes/files/OriginalPhoto0.JPG" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/licenta-OCR.iml" afterPath="$PROJECT_DIR$/licenta-OCR.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/server/controller/UploadFileController.java" afterPath="$PROJECT_DIR$/src/main/java/app/server/controller/UploadFileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/server/model/TextRecognized.java" afterPath="$PROJECT_DIR$/src/main/java/app/server/model/TextRecognized.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/server/service/ImageProcessing.java" afterPath="$PROJECT_DIR$/src/main/java/app/server/service/ImageProcessing.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/server/tools/FileTool.java" afterPath="$PROJECT_DIR$/src/main/java/app/server/tools/FileTool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/server/tools/ImageTool.java" afterPath="$PROJECT_DIR$/src/main/java/app/server/tools/ImageTool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/uploadForm.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/uploadForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/uploadOk.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/uploadOk.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/uploadForm.html" afterPath="$PROJECT_DIR$/target/classes/templates/uploadForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/uploadOk.html" afterPath="$PROJECT_DIR$/target/classes/templates/uploadOk.html" />
     </list>
     <ignored path="licenta-OCR.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +34,8 @@
       <file leaf-file-name="ImageProcessing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/server/service/ImageProcessing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+            <state relative-caret-position="2601">
+              <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -71,8 +44,8 @@
       <file leaf-file-name="FileTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/server/tools/FileTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state relative-caret-position="799">
+              <caret line="70" column="99" selection-start-line="70" selection-start-column="99" selection-end-line="70" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -81,10 +54,10 @@
       <file leaf-file-name="UploadFileController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/server/controller/UploadFileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="599">
+              <caret line="150" column="2" selection-start-line="150" selection-start-column="2" selection-end-line="150" selection-end-column="2" />
               <folding>
-                <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+                <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
               </folding>
             </state>
           </provider>
@@ -181,11 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -486,6 +454,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -948,12 +921,13 @@
       <workItem from="1477986436871" duration="20985000" />
       <workItem from="1478073559789" duration="14300000" />
       <workItem from="1478161626426" duration="6076000" />
-      <workItem from="1478172562850" duration="642000" />
+      <workItem from="1478172562850" duration="9621000" />
+      <workItem from="1478259420304" duration="607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62920000" />
+    <option name="totallyTimeSpent" value="72506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="2418" height="1326" extended-state="6" />
@@ -961,19 +935,18 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7371956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4315701" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -984,6 +957,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1054,7 +1028,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1105,7 +1079,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1156,7 +1130,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1193,7 +1167,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1230,7 +1204,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1267,7 +1241,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1414,28 +1388,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/server/service/ImageProcessing.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/server/tools/FileTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+        <state relative-caret-position="799">
+          <caret line="70" column="99" selection-start-line="70" selection-start-column="99" selection-end-line="70" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/server/tools/FileTool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/server/service/ImageProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state relative-caret-position="2601">
+          <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/server/controller/UploadFileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="599">
+          <caret line="150" column="2" selection-start-line="150" selection-start-column="2" selection-end-line="150" selection-end-column="2" />
           <folding>
-            <marker date="1478168077777" expanded="true" signature="5478:5547" ph="..." />
+            <marker date="1478182080202" expanded="true" signature="5480:5549" ph="..." />
           </folding>
         </state>
       </provider>
