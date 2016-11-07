@@ -143,20 +143,20 @@ public class UploadFileController {
                 fileTool.saveImage(adaptiveThreshold,imageTool.getImageName()+ "." + imageTool.getImageExtension(),fileTool.getNewDirPath());
                 BufferedImage imgForTesseract = null;
 
-//                try {
-//                    imgForTesseract = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
-//
-//
-//                }catch (IOException e) {}
-//
-//                Tesseract instance = new Tesseract();
-//                instance.setLanguage("ron");
-//
-//                try {
-//                    result += instance.doOCR(imgForTesseract);
-//                } catch (TesseractException e) {
-//                    System.err.println(e.getMessage());
-//                }
+                try {
+                    imgForTesseract = ImageIO.read(new File(fileTool.getNewDirPath() + imageTool.getImageName() + "." + imageTool.getImageExtension()));
+
+
+                }catch (IOException e) {}
+
+                Tesseract instance = new Tesseract();
+                instance.setLanguage("ron");
+
+                try {
+                    result += instance.doOCR(imgForTesseract);
+                } catch (TesseractException e) {
+                    System.err.println(e.getMessage());
+                }
 
                 result +="\n";
                 System.out.println(i);

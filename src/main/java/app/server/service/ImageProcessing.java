@@ -163,8 +163,8 @@ public class ImageProcessing {
 
             Point pt1 = new Point(rec.x + 18 , rec.y + 18);
             Point pt2 = new Point(rec.x + rec.width - 1, rec.y + rec.height - 1);
-            Scalar color = new Scalar(255,255,255);
-            Imgproc.rectangle(imageCountours,pt1,pt2,color,4);
+            Scalar color = new Scalar(255,0,255);
+            Imgproc.rectangle(imageCountours,pt1,pt2,color,2);
 
             rec.x = rec.x + 21;
             rec.y = rec.y + 21;
